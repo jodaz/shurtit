@@ -1,0 +1,17 @@
+extends Parcials/header.pug
+
+block append body
+	body
+		.container
+			header.header
+				.row.flex-nowrap.justify-content-between.align-items-center
+					.col-12.text-center
+						h1.header-logo Shurt it!
+
+				main.row.justify-content-md-center
+					form(method='POST' action='api/shorturl/new')
+						label(for='url-input') URL to be shortened
+						input#url(type='text', name='url', placeholder='https://www.freecodecamp.com')
+						input(type='submit', value='POST URL')
+
+	include Parcials/footer.pug
