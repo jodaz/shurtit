@@ -12,7 +12,6 @@ const errorMessage = {
 		"error": "invalid Hostname"
 	}
 }
-const shortUrl = shortID.generate();
 
 exports.postURL = (request, response) => {
 	// Regex source https://github.com/yagoestevez/cortala/
@@ -26,29 +25,50 @@ exports.postURL = (request, response) => {
 
 	// Validate url
   if (validProtocol && validUrl) {
-    dns.lookup(domain, (error) => {
+    dns.lookup(domainOnly[0], error => {
     	if (error) {
     		response.json(errorMessage.invalidHost);
     	} else {
-  			saveLink(url, response);	
-    	}
-    });
+    		findLink();
+  		}
+  	})
   } else {
   	response.json(errorMessage.invalidUrl);
   }
 
-  const saveLink = (url, response) => {
-		const newUrl = {
-			"url": url,
-			"shortenUrl": shortUrl
+  function saveLink(id) {
+		let newUrl = {
+			"originalUrl": url,
+			"shortUrl": id
 		}
 
 		db.collection('links').insertOne(newUrl, (error, result) => {
 			assert.equal(error, null);
 			response.json({
-				"original_url": url,
-				"short_url": shortUrl
+				"original_url": newUrl.originalUrl,
+				"short_url": newUrl.shortUrl
 			});
+		});
+	}
+
+	function findLink() {
+		let id = shortID.generate();
+
+		db.collection('links').find({"shortUrl": id}, (err, result) => {
+			if (result != null) {
+				db.collection('links').findOne({"originalUrl": url}, (error, doc) => {
+					if (doc != null){
+						response.json({
+							"original_url": doc.originalUrl,
+							"short_url": doc.shortUrl
+						});
+					} else {
+						id = shortID.generate();
+						saveLink(id);
+				}});
+			} else {
+				response.json({"error": error});
+			}
 		});
 	}
 };
