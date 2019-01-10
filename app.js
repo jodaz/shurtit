@@ -6,7 +6,8 @@ const express    = require('express'),
 			assert     = require('assert'),
 			cors       = require('cors'),
 			bodyParser = require('body-parser');
-			postUrlController = require('./controllers/postController.js');
+			postUrlController = require('./controllers/postController.js'),
+			getUrlController  = require('./controllers/getController.js');
 
 require('dotenv').config(); // Set enviroment variables
 
@@ -30,6 +31,7 @@ mongo.connect(process.env.MONGO_URI, (error, client) => {
 	});
 	
 	app.post('/api/shorturl/new', postUrlController.postURL);
+	app.get('/api/shorturl/:short', getUrlController.getUrl);
 	
 	app.get('*', (request, response) => {
 		response.render('404', { title: '404 - Resource not found' })
