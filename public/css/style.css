@@ -42,6 +42,7 @@ body {
   margin-bottom: 30px;
   background-color: var(--ghost-white);
   color: var(--rich-black) !important;
+  z-index: 2;
 }
 .app .url-input {
   font-size: 1.4rem;
@@ -86,7 +87,7 @@ body {
   width: 100%;
   line-height: 30px;
   font-size: 1rem;
-  z-index: -2;
+  z-index: 1;
 }
 .footer .link a {
   color: var(--ghost-white);
