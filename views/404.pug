@@ -1,1 +1,12 @@
-extends Parcials/header.pug
+extends parcials/header.pug
+
+block append body
+	.h-100.d-flex.justify-content-center.align-items-center.flex-column
+		.app.text-center
+			h1.title <s class="strike">Ups!</s>:'C
+			p.text-left Sorry, Shurtit couldn't find a link for 
+				code#link.text--error
+			a.text--success(href="/") Back to main page
+
+	script(src="/public/js/404-not-found.js")
+	include parcials/footer.pug	

@@ -11,9 +11,7 @@ exports.getUrl = (request, response) => {
 		if (doc) {
 			response.redirect(doc.originalUrl);
 		} else {
-			response.json({
-				"Error": "We cannot find a matching URL"
-			});
+			response.render('404', {title: 'Shurtit! | Page Not Found'});
 		}
 	});
 }

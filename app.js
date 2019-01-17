@@ -28,15 +28,11 @@ mongo.connect(process.env.MONGO_URI, { useNewUrlParser: true }, (error, client) 
 
   //------ ROUTES ------//
   app.get('/', (request, response) => {
-		response.render('index', { title: 'Shurt it!' })
+		response.render('index', { title: 'Shurtit!' })
 	});
 	
 	app.post('/new', postUrlController.postURL);
 	app.get('/:short', getUrlController.getUrl);
-	
-	app.get('*', (request, response) => {
-		response.render('404', { title: '404 - Resource not found' })
-	});
 
   app.listen(process.env.PORT || 3000, () => {
       console.log(`Server started at port ${process.env.PORT || 3000}`);
