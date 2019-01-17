@@ -1,16 +1,28 @@
 extends parcials/header.pug
 
 block append body
-	.container
-		header.header
-			.row.flex-nowrap.justify-content-between.align-items-center
-				.col-12.text-center
-					h1.header-logo Shurt it!
+	.h-100.d-flex.justify-content-center.align-items-center.flex-column
+		.app.text-center
+			h1.title <s class="strike">Shurt</s>it!
+			form#form-input-url.form-inline(method='POST' action='api/shorturl/new')
+				input#input-url.url-input.form-control.col-12(
+					type='text', name='url', placeholder='http(s)://example.com/optional/path'
+				)
+				button.btn.btn-primary.col-12(type='submit') Get your short URL
+		
+			#success-output.card.card-hide.box-shadow
+				.card-body
+					h5.text--success This is your shortened URL:
+					input#short-url.url-input.form-control.col-12(
+						type='text', value='' disabled
+					)
 
-			main.row.justify-content-md-center
-				form(method='POST' action='api/shorturl/new')
-					label(for='url-input') URL to be shortened
-					input#url(type='text', name='url', placeholder='https://www.freecodecamp.com')
-					input(type='submit', value='POST URL')
+			#error-output.card.card-hide.box-shadow
+				.card-body
+					h5.text--error Yikes!
+					p.text-left It seems like the URL you entered doesn't has a good format.
+					p.text-left Please, try again with the following format.
+					code.example-url http(s)://example.com/optional/path
 
 	include parcials/footer.pug
+	script(src="/public/js/index.js")

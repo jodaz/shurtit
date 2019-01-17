@@ -1,0 +1,92 @@
+html {
+  height: 100%;
+  --international-orange: #c32f27;
+  --ghost-white: #fbfbff;
+  --rich-black: #040f16;
+  --true-blue: #027bce;
+}
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--international-orange);
+  padding: 0 1rem;
+}
+
+/* TYPOGRAPHY */
+.title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 3.5rem;
+  color: var(--true-blue) !important;
+}
+.text--success {
+  color: var(--true-blue);
+  font-family: 'Comfortaa', cursive;
+}
+.text--error {
+  color: var(--international-orange);
+  font-family: 'Comfortaa', cursive;
+}
+.example-url {
+  background-color: var(--rich-black);
+  color: var(--ghost-white);
+}
+.strike {
+  color: var(--rich-black);
+}
+
+/* MAIN APP */
+.app {
+  width: 100%;
+  max-width: 600px;
+  padding: 5rem 3rem;
+  margin-bottom: 30px;
+  background-color: var(--ghost-white);
+  color: var(--rich-black) !important;
+}
+.app .url-input {
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+  border-radius: 0;
+}
+.app .btn {
+  font-size: 1.4rem;
+  border-radius: 0;
+}
+.app .form-control {
+  padding: 10px;
+  font-size: 1.4rem;
+}
+.app .form-control:focus {
+  z-index: 10;
+}
+.card {
+  margin-top: 25px;
+  z-index: -1;
+  opacity: 0;
+  height: 0;
+  transition: opacity 500ms, height 200ms, z-index 100ms 300ms;
+}
+.card-hide {
+  opacity: 0;
+  z-index: -1;
+  height: 0;
+  margin: 0;
+}
+.card-show {
+  opacity: 1;
+  z-index: 1;
+  height: 170px;
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  font-size: 1rem;
+}
+.footer .link a {
+  color: var(--ghost-white);
+}
