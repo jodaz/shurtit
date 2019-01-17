@@ -31,8 +31,8 @@ mongo.connect(process.env.MONGO_URI, { useNewUrlParser: true }, (error, client) 
 		response.render('index', { title: 'Shurt it!' })
 	});
 	
-	app.post('/api/shorturl/new', postUrlController.postURL);
-	app.get('/api/shorturl/:short', getUrlController.getUrl);
+	app.post('/new', postUrlController.postURL);
+	app.get('/:short', getUrlController.getUrl);
 	
 	app.get('*', (request, response) => {
 		response.render('404', { title: '404 - Resource not found' })

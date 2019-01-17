@@ -6,7 +6,7 @@ var focusInput = true;
 
 document.getElementById("form-input-url").addEventListener('submit', (e) => {
 	e.preventDefault();
-	let APIUrl = window.location.href + "api/shorturl/new";
+	let APIUrl = window.location.href + "new";
 	let url = urlInput.value;
 	let data = {'url': url};
 
@@ -25,7 +25,7 @@ document.getElementById("form-input-url").addEventListener('submit', (e) => {
 			  	errorCard.classList.remove('card-hide');
 			  	focusInput = true;
 				} else {
-					shortUrlInput.innerText = data.short_url;
+					shortUrlInput.innerText = window.location.href + data.short_url;
 					successCard.classList.add('card-show');
 					successCard.classList.remove('card-hide');
 				}
