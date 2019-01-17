@@ -6,7 +6,7 @@ var focusInput = true;
 
 document.getElementById("form-input-url").addEventListener('submit', (e) => {
 	e.preventDefault();
-	let APIUrl = "http://localhost:3000/api/shorturl/new";
+	let APIUrl = window.location.href + "api/shorturl/new";
 	let url = urlInput.value;
 	let data = {'url': url};
 
