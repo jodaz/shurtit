@@ -38,7 +38,7 @@ body {
 .app {
   width: 100%;
   max-width: 600px;
-  padding: 5rem 3rem;
+  padding: 3rem 2rem;
   margin-bottom: 30px;
   background-color: var(--ghost-white);
   color: var(--rich-black) !important;

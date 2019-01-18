@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html( lang="en" )
+	head
+		meta( charset="UTF-8" )
+		meta( name="viewport", content="width=device-width, initial-scale=1.0")
+		title API Docs | Shurtit!
+		link( href="https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans" rel="stylesheet" )
+		link( href="/public/css/bootstrap.min.css", rel="stylesheet" )
+		link( href="/public/css/docs.css", rel="stylesheet" )
+	body
+		.container
+			.justify-content-center
+				header.header
+					h1.header-title Shurtit!
+					h2.header-desc API Documentation
+				main
+					h3.subtitle Greetings, dear user!
+					p Welcome to Shurtit! Api documentation. Please follow the instructions to make use of this api. You can also go back to #[span.link #[a(href="/") main page]].
+					h3.subtitle How to use
+					ul
+						li Send a post request to #[span.example-url (url)/new], where <em>url</em> is the project base url.
+						li You will get a JSON response with the original and shortened url.
+						li If the URL does not follow the #[span.example-url http(s)://www.example.com(/more/routes)] format, the JSON response will contain an error similar to #[span.example-url {"error": "invalid URL"}]
+		include parcials/footer.pug

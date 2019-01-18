@@ -1,0 +1,38 @@
+html {
+  height: 100%;
+  --international-orange: #c32f27;
+  --ghost-white: #fbfbff;
+  --rich-black: #040f16;
+  --true-blue: #027bce;
+  --isabelline: #ededee;
+}
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--ghost-white);
+  color: var(--rich-black);
+}
+.header {
+	padding: 4rem 0;
+}
+.subtitle {
+	text-decoration: underline;
+
+}
+.example-url {
+	background-color: var(--rich-black);
+  color: var(--ghost-white);
+  padding: 4px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  font-size: 1rem;
+  z-index: 1;
+}
+.link a {
+  color: var(--true-blue);
+}

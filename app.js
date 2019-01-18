@@ -30,7 +30,9 @@ mongo.connect(process.env.MONGO_URI, { useNewUrlParser: true }, (error, client) 
   app.get('/', (request, response) => {
 		response.render('index', { title: 'Shurtit!' })
 	});
-	
+	app.get('/docs', (request, response) => {
+		response.render('docs');
+	});
 	app.post('/new', postUrlController.postURL);
 	app.get('/:short', getUrlController.getUrl);
 
