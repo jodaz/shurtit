@@ -44,18 +44,18 @@ body {
   color: var(--rich-black) !important;
   z-index: 2;
 }
-.app .url-input {
+.app .form-control {
+  padding: 10px;
   font-size: 1.4rem;
+}
+.app .url-input {
+  font-size: 0.84rem;
   margin-bottom: 22px;
   border-radius: 0;
 }
 .app .btn {
   font-size: 1.4rem;
   border-radius: 0;
-}
-.app .form-control {
-  padding: 10px;
-  font-size: 1.4rem;
 }
 .app .form-control:focus {
   z-index: 10;
@@ -91,4 +91,9 @@ body {
 }
 .footer .link a {
   color: var(--ghost-white);
+}
+@media (min-width: 600px) {
+	.app .url-input {
+		font-size: 1.4rem;
+	}
 }
