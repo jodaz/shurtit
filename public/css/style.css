@@ -21,6 +21,7 @@ body {
 .text--success {
   color: var(--true-blue);
   font-family: 'Comfortaa', cursive;
+  margin-top: 1.35rem;
 }
 .text--error {
   color: var(--international-orange);
@@ -38,7 +39,7 @@ body {
 .app {
   width: 100%;
   max-width: 600px;
-  padding: 3rem 2rem;
+  padding: 1.8rem 2rem;
   margin-bottom: 30px;
   background-color: var(--ghost-white);
   color: var(--rich-black) !important;
@@ -61,6 +62,7 @@ body {
   z-index: 10;
 }
 .card {
+	justify-content: center;
   margin-top: 25px;
   z-index: -1;
   opacity: 0;
@@ -73,11 +75,23 @@ body {
   height: 0;
   margin: 0;
 }
+	.card-hide > * {
+		display: none;
+	}
 .card-show {
   opacity: 1;
   z-index: 1;
-  height: 12rem;
+  height: 16rem;
 }
+	.card-show > * {
+		display: block;
+	}
+	#success-output #short-url {
+		display: block;
+		font-size: 1rem;
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
 
 /* FOOTER */
 .footer {
@@ -95,5 +109,8 @@ body {
 @media (min-width: 600px) {
 	.app .url-input {
 		font-size: 1.4rem;
+	}
+	.card-show {
+		height: 11.53rem;
 	}
 }
