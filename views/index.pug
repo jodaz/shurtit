@@ -4,6 +4,7 @@ block append body
 	.h-100.d-flex.justify-content-center.align-items-center.flex-column
 		.app.text-center
 			h1.title <s class="strike">Shurt</s>it!
+			p Place an URL into the input field 
 			form#form-input-url.form-inline(method='POST' action='api/shorturl/new')
 				input#input-url.url-input.form-control.col-12(
 					type='text', name='url', placeholder='http(s)://example.com/optional/path'
