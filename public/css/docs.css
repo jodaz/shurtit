@@ -1,5 +1,6 @@
 html {
-  height: 100%;
+	position: relative;
+  min-height: 100%;
   --international-orange: #c32f27;
   --ghost-white: #fbfbff;
   --rich-black: #040f16;
@@ -25,13 +26,14 @@ body {
   padding: 4px;
 }
 .footer {
-  position: fixed;
+  position: absolute;
+  left: 0;
   bottom: 0;
   height: 30px;
   width: 100%;
   line-height: 30px;
-  font-size: 1rem;
-  z-index: 1;
+  font-size: 0.8rem;
+  overflow-x: hidden;
 }
 .link a {
   color: var(--true-blue);

@@ -95,17 +95,18 @@ body {
 
 /* FOOTER */
 .footer {
-  position: fixed;
+  position: absolute;
+  left: 0;
   bottom: 0;
   height: 30px;
   width: 100%;
   line-height: 30px;
-  font-size: 1rem;
-  z-index: 1;
+  font-size: 0.8rem;
+  overflow-x: hidden;
 }
-.footer .link a {
-  color: var(--ghost-white);
-}
+	.footer .link a {
+	  color: var(--ghost-white);
+	}
 @media (min-width: 600px) {
 	.app .url-input {
 		font-size: 1.4rem;
